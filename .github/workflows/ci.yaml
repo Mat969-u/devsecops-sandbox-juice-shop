@@ -23,6 +23,7 @@ jobs:
           args: >
             -Dsonar.organization=mat969-u
             -Dsonar.projectKey=Mat969-u_devsecops-sandbox-juice-shop
+            -Dsonar.sources=.
           
       - name: Add SonarQube Quality Gate Badge
         run: |
