@@ -19,10 +19,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        with:
-          args: >
-            -Dsonar.organization=Mat969-u
-            -Dsonar.projectKey=Mat969-u_devsecops-sandbox-juice-shop
+        # with:
+        #   args: >
+        #     -Dsonar.organization=Mat969-u
+        #     -Dsonar.projectKey=Mat969-u_devsecops-sandbox-juice-shop
           
       - name: Add SonarQube Quality Gate Badge
         run: |
