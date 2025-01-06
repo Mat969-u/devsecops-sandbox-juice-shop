@@ -21,6 +21,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           args: >
+            -Dsonar.organization=mat969-u
             -Dsonar.projectKey=Mat969-u_devsecops-sandbox-juice-shop
           
       - name: Add SonarQube Quality Gate Badge
