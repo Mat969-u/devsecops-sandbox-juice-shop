@@ -14,5 +14,18 @@ jobs:
       #   run: npm install
       # - name: Run tests
       #   run: npm test
-      - name: GHA testings
-        run: echo "GHA is working"
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarqube-scan-action@v4.2.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        with:
+          args: >
+            -Dsonar.organization=Mat969-u
+            -Dsonar.projectKey=Mat969-u_devsecops-sandbox-juice-shop
+            -Dsonar.sources=.
+            -Dsonar.host.url=https://sonarcloud.io
+      - name: Add SonarQube Quality Gate Badge
+        run: |
+          echo "SonarQube Scan" >> $GITHUB_STEP_SUMMARY
+          echo "![SonarQube Scan](https://sonarcloud.io/api/project_badges/measure?project=Mat969-u_devsecops-sandbox-juice-shop&metric=alert_status)" >> $GITHUB_STEP_SUMMARY
