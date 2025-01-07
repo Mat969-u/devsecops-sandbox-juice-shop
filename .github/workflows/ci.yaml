@@ -44,7 +44,7 @@ jobs:
         run: docker build -t ${{ secrets.DOCKER_USERNAME }}/juice-shop:${{ github.run_id }} .
 
       - name: "Start workflow Summary"
-        run: echo ' ## Docker Scout Scan Result' >> $GITHUB_STEP_SUMMARY
+        run: echo '## Docker Scout Scan Results' >> $GITHUB_STEP_SUMMARY
 
       - name: Docker Scout Scan
         uses: docker/scout-action@v1.16.1
