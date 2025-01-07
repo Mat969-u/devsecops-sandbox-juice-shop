@@ -41,7 +41,7 @@ jobs:
 
 
       - name: Build Docker image
-        run: docker build -t ${{ secret.DOCKER_USERNAME }}/juice-shop:${{ github.run_id }} .
+        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/juice-shop:${{ github.run_id }} .
 
       - name: "Start workflow Summary"
         run: echo ' ## Docker Scout Scan Result' >> $GITHUB_STEP_SUMMARY
@@ -53,4 +53,4 @@ jobs:
           only-serverities: critical, high 
       
       - name: "Push Docker Image to Docker Hub"
-        run: docker push ${{ secret.DOCKER_USERNAME }}/juice-shop:${{ github.run_id }}
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/juice-shop:${{ github.run_id }}
