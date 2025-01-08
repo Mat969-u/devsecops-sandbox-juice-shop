@@ -8,8 +8,8 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-24.04
-    # if: false # Temporarely disabling this job to work on something else instead
+    runs-on: ubuntu-22.04
+    # if: false # Temporarily disabling this job to work on something else instead
     steps:
       - name: "Checkout repository"
         uses: actions/checkout@v4
