@@ -103,7 +103,7 @@ jobs:
 
   trigger-cd:
     runs-on: ubuntu-24.04
-    needs: [sast, docker, terraform]
+    needs: [build, docker, terraform]
     steps:
       - name: "Trigger CD pipeline"
         uses: actions/github-script@v6
